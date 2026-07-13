@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OK Room ｜ たのしく心理学、やさしく自分を癒す</title>
+<meta name="description" content="はじめての方も安心。心のしくみをやさしく学びながら、自分をゆっくり癒していく心理学講座。入門から上級まで、あなたのペースで。オンライン（Zoom）開催。お申し込み・ご相談はLINEから。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFF7FB;--surface:#ffffff;--ink:#6b6280;--ink-soft:#9d95ac;
+    --lav:#b7a4e6;--lav-deep:#7d6bc0;--peach:#ffc7ad;--peach-deep:#f0a184;
+    --pink:#ffb6d0;--mint:#a6e2c8;--mint-deep:#5cbf99;--sky:#aad7f2;--yellow:#ffe1a6;
+    --tint-lav:#f1ecfc;--tint-peach:#fff0e8;--tint-mint:#e9f8f1;--tint-pink:#fff0f5;
+    --border:#f0e7f5;--shadow:0 14px 34px rgba(150,120,200,.14);--shadow-sm:0 8px 20px rgba(150,120,200,.10);--r:26px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:"M PLUS Rounded 1c",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.95;font-weight:400;-webkit-font-smoothing:antialiased;}
+  .round{font-family:"Zen Maru Gothic",serif;}
+  .wrap{width:min(1040px,92%);margin-inline:auto;}
+  a{color:inherit;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,247,251,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;}
+  .brand{font-family:"Zen Maru Gothic",serif;font-weight:700;font-size:1.3rem;color:var(--lav-deep);text-decoration:none;display:flex;align-items:center;gap:9px;}
+  .brand .dot{width:26px;height:26px;flex:none;}
+  .brand small{display:block;font-family:"M PLUS Rounded 1c";font-weight:400;font-size:.58rem;letter-spacing:.16em;color:var(--ink-soft);margin-top:1px;}
+  .nav-links{display:flex;gap:22px;align-items:center;}
+  .nav-links a{text-decoration:none;font-size:.88rem;color:var(--ink-soft);transition:color .2s;}
+  .nav-links a:hover{color:var(--lav-deep);}
+  @media(max-width:860px){.nav-links a:not(.btn-line-sm){display:none;}}
+
+  .btn-line,.btn-line-sm{display:inline-flex;align-items:center;gap:9px;background:#06C755;color:#fff;text-decoration:none;border-radius:999px;font-weight:700;box-shadow:0 8px 18px rgba(6,199,85,.3);transition:transform .15s ease, box-shadow .15s ease;}
+  .btn-line:hover,.btn-line-sm:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(6,199,85,.38);}
+  .btn-line{padding:17px 36px;font-size:1.08rem;}
+  .btn-line-sm{padding:10px 20px;font-size:.85rem;}
+  .li{width:20px;height:20px;flex:none;fill:#fff;}
+
+  .hero{position:relative;overflow:hidden;padding:66px 0 74px;background:radial-gradient(680px 380px at 82% 10%,var(--tint-peach) 0%,transparent 60%),radial-gradient(620px 420px at 12% 20%,var(--tint-lav) 0%,transparent 60%),linear-gradient(180deg,#fffdfe 0%,var(--bg) 100%);}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:30px;align-items:center;}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;text-align:center;}.hero-art{order:-1;max-width:440px;margin-inline:auto;}}
+  .hero .eyebrow{display:inline-block;background:#fff;color:var(--lav-deep);border:1px solid var(--border);border-radius:999px;padding:7px 18px;font-size:.78rem;font-weight:500;margin-bottom:22px;box-shadow:var(--shadow-sm);}
+  .hero h1{font-family:"Zen Maru Gothic",serif;font-weight:700;color:var(--lav-deep);font-size:clamp(1.8rem,5vw,2.9rem);line-height:1.55;margin:0 0 20px;}
+  .hero h1 .ac{color:var(--peach-deep);}
+  .hero p.lead{color:var(--ink);font-size:1.02rem;margin:0 0 32px;}
+  @media(max-width:860px){.hero p.lead{margin-inline:auto;max-width:520px;}}
+  .hero-cta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+  @media(max-width:860px){.hero-cta{justify-content:center;}}
+  .hero-note{font-size:.8rem;color:var(--ink-soft);margin-top:16px;}
+  .hero-art svg{width:100%;height:auto;display:block;}
+  .hero-art img{width:100%;height:auto;display:block;border-radius:30px;box-shadow:var(--shadow);border:6px solid #fff;}
+
+  .safe{padding:0;margin-top:-30px;position:relative;z-index:2;}
+  .safe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:760px){.safe-grid{grid-template-columns:1fr;}}
+  .safe-card{background:var(--surface);border-radius:22px;padding:28px 26px;box-shadow:var(--shadow-sm);text-align:center;border:1px solid var(--border);}
+  .safe-card .ico{width:64px;height:64px;margin:0 auto 14px;}
+  .safe-card h3{font-family:"Zen Maru Gothic",serif;font-size:1.12rem;color:var(--lav-deep);margin:0 0 8px;font-weight:700;}
+  .safe-card p{font-size:.9rem;color:var(--ink-soft);margin:0;line-height:1.85;}
+
+  section{padding:74px 0;}
+  .sec-head{text-align:center;margin-bottom:48px;}
+  .sec-head .ja{font-family:"Zen Maru Gothic",serif;font-size:clamp(1.5rem,3.8vw,2.1rem);color:var(--lav-deep);font-weight:700;margin:.2em 0 12px;}
+  .pill{display:inline-block;background:var(--tint-lav);color:var(--lav-deep);border-radius:999px;padding:5px 16px;font-size:.72rem;font-weight:500;}
+  .sec-head p{max-width:660px;margin:0 auto;color:var(--ink-soft);font-size:.98rem;}
+
+  .intro{background:var(--surface);}
+  .intro .wrap{max-width:780px;text-align:center;}
+  .intro .quote{font-family:"Zen Maru Gothic",serif;font-size:clamp(1.25rem,3.2vw,1.7rem);color:var(--lav-deep);line-height:1.85;margin:0 0 24px;font-weight:500;}
+  .intro .quote span{background:linear-gradient(transparent 60%,var(--yellow) 60%);padding:0 .12em;}
+  .intro p{color:var(--ink);}
+  .merit{margin-top:32px;background:var(--tint-mint);border-radius:24px;padding:28px 30px;display:flex;gap:18px;align-items:flex-start;text-align:left;}
+  .merit svg{width:52px;height:52px;flex:none;}
+  .merit p{margin:0;font-size:.96rem;color:var(--ink);}
+  .merit b{color:var(--mint-deep);}
+  @media(max-width:600px){.merit{flex-direction:column;align-items:center;text-align:center;}}
+
+  .courses{background:linear-gradient(180deg,var(--tint-lav),var(--bg));}
+  .grid{display:grid;gap:24px;grid-template-columns:repeat(2,1fr);}
+  @media(max-width:760px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--surface);border-radius:var(--r);padding:32px 30px;box-shadow:var(--shadow-sm);transition:transform .18s ease, box-shadow .18s ease;border:1px solid var(--border);}
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+  .card-top{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+  .grow{width:66px;height:66px;flex:none;}
+  .step{font-size:.72rem;letter-spacing:.06em;color:var(--peach-deep);font-weight:700;margin-bottom:2px;}
+  .card h3{font-family:"Zen Maru Gothic",serif;font-size:1.35rem;color:var(--lav-deep);margin:0;font-weight:700;}
+  .card .desc{color:var(--ink);font-size:.96rem;margin-bottom:18px;}
+  .curriculum{margin-bottom:16px;font-size:.84rem;color:var(--ink-soft);background:var(--tint-mint);border-radius:16px;padding:13px 17px;}
+  .curriculum b{color:var(--mint-deep);font-weight:700;}
+  .meta{border-top:1.5px dashed var(--border);padding-top:16px;display:grid;gap:9px;font-size:.9rem;}
+  .meta .row{display:flex;gap:12px;}
+  .meta .k{flex:none;width:5em;color:var(--lav);font-weight:700;}
+  .meta .v{color:var(--ink-soft);}
+  .price{color:var(--peach-deep);font-weight:700;}
+
+  .reward{margin-top:40px;background:linear-gradient(135deg,var(--lav) 0%,var(--pink) 100%);color:#fff;border-radius:30px;padding:44px 34px;text-align:center;box-shadow:var(--shadow);}
+  .reward .pill{background:rgba(255,255,255,.28);color:#fff;}
+  .reward h3{font-family:"Zen Maru Gothic",serif;font-size:1.5rem;margin:16px 0 12px;font-weight:700;}
+  .reward p{color:#fff;opacity:.95;margin:0 auto;max-width:560px;font-size:.95rem;}
+  .reward .cert{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:#fff;color:var(--lav-deep);border-radius:999px;padding:11px 24px;font-size:.92rem;font-weight:700;box-shadow:var(--shadow-sm);}
+
+  /* Promise */
+  .promise{background:var(--surface);}
+  .promise-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:8px;}
+  @media(max-width:700px){.promise-grid{grid-template-columns:1fr;}}
+  .p-card{display:flex;gap:16px;background:var(--tint-pink);border-radius:22px;padding:24px 26px;align-items:flex-start;}
+  .p-num{flex:none;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--pink);display:grid;place-items:center;font-family:"Zen Maru Gothic",serif;font-weight:700;font-size:1.2rem;box-shadow:var(--shadow-sm);}
+  .p-card h4{font-family:"Zen Maru Gothic",serif;color:var(--lav-deep);font-size:1.05rem;margin:2px 0 6px;font-weight:700;}
+  .p-card p{margin:0;font-size:.88rem;color:var(--ink);line-height:1.8;}
+
+  /* 受講について */
+  .about-course{background:linear-gradient(180deg,var(--bg),var(--tint-mint));}
+  .ac-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  @media(max-width:700px){.ac-grid{grid-template-columns:1fr;}}
+  .ac-card{background:var(--surface);border-radius:22px;padding:26px 28px;box-shadow:var(--shadow-sm);border:1px solid var(--border);}
+  .ac-card .h{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .ac-card .h svg{width:40px;height:40px;flex:none;}
+  .ac-card h4{font-family:"Zen Maru Gothic",serif;color:var(--lav-deep);font-size:1.12rem;margin:0;font-weight:700;}
+  .ac-card p{margin:0;font-size:.9rem;color:var(--ink);}
+  .ac-card .small{font-size:.82rem;color:var(--ink-soft);margin-top:8px;}
+
+  .price-sec{background:var(--surface);}
+  .price-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-sm);font-size:.94rem;border:1px solid var(--border);}
+  .price-table th,.price-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--border);}
+  .price-table th{background:var(--lav);color:#fff;font-weight:500;}
+  .price-table tr:last-child td{border-bottom:none;}
+  .price-table td:last-child{color:var(--peach-deep);font-weight:700;white-space:nowrap;}
+  .table-scroll{overflow-x:auto;}
+  .price-note{text-align:center;color:var(--ink-soft);font-size:.82rem;margin-top:16px;}
+
+  /* Profile */
+  .profile{background:linear-gradient(180deg,var(--tint-lav),var(--bg));}
+  .prof-card{background:var(--surface);border-radius:30px;box-shadow:var(--shadow);border:1px solid var(--border);display:grid;grid-template-columns:280px 1fr;overflow:hidden;}
+  @media(max-width:760px){.prof-card{grid-template-columns:1fr;}}
+  .prof-photo{background:linear-gradient(160deg,var(--tint-peach),var(--tint-lav));display:flex;flex-direction:column;align-items:center;justify-content:center;padding:38px 24px;text-align:center;}
+  .prof-photo .avatar{width:150px;height:150px;border-radius:50%;background:#fff;box-shadow:var(--shadow-sm);display:grid;place-items:center;overflow:hidden;}
+  .prof-photo .avatar svg{width:120px;height:120px;}
+  .prof-photo .en{margin-top:16px;font-size:.66rem;letter-spacing:.2em;color:var(--lav-deep);font-weight:500;}
+  .prof-photo .name{font-family:"Zen Maru Gothic",serif;font-size:1.4rem;color:var(--lav-deep);font-weight:700;margin-top:4px;}
+  .prof-body{padding:40px 38px;}
+  .prof-body p{margin:0 0 14px;font-size:.95rem;color:var(--ink);}
+  .prof-body p:last-child{margin-bottom:0;}
+  .prof-body .lead{font-family:"Zen Maru Gothic",serif;color:var(--lav-deep);font-size:1.1rem;font-weight:500;}
+
+  .cta{background:radial-gradient(700px 340px at 50% 120%,var(--tint-lav) 0%,transparent 70%),var(--surface);text-align:center;}
+  .cta .heart{width:56px;height:56px;margin:0 auto 8px;}
+  .cta h2{font-family:"Zen Maru Gothic",serif;font-size:clamp(1.6rem,4vw,2.3rem);color:var(--lav-deep);margin:0 0 16px;font-weight:700;}
+  .cta p{color:var(--ink);max-width:540px;margin:0 auto 32px;}
+  .cta .steps{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:34px;}
+  .cta .steps span{background:var(--tint-lav);color:var(--lav-deep);border-radius:999px;padding:9px 20px;font-size:.86rem;font-weight:500;}
+
+  footer{background:var(--lav-deep);color:#efe9fb;padding:46px 0 30px;text-align:center;font-size:.85rem;}
+  footer .brand{color:#fff;justify-content:center;margin-bottom:10px;}
+  footer .note{color:#c7bce8;font-size:.76rem;margin-top:14px;line-height:1.8;}
+  footer a{color:#fff;}
+
+  .floating-line{position:fixed;right:18px;bottom:18px;z-index:60;}
+  @media(max-width:860px){.floating-line{right:14px;bottom:14px;}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="./" class="brand round">
+      <svg class="dot" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#b7a4e6"/><path d="M20 30c-6-4-10-7.5-10-12a5.4 5.4 0 0 1 10-2 5.4 5.4 0 0 1 10 2c0 4.5-4 8-10 12z" fill="#fff"/></svg>
+      OK Room<small>やさしい心理学</small>
+    </a>
+    <nav class="nav-links">
+      <a href="./">ホーム</a>
+      <a href="#about">はじめに</a>
+      <a href="#self">講座について</a>
+      <a href="#promise">4つの約束</a>
+      <a href="#profile">講師紹介</a>
+      <a class="btn-line-sm" href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">
+        <svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.66 2 10.16c0 4.03 3.55 7.4 8.35 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.9.56 1.1-.46 5.94-3.5 8.1-5.99C21.4 13.4 22 11.86 22 10.16 22 5.66 17.52 2 12 2z"/></svg>
+        LINEで相談
+      </a>
+    </nav>
+  </div>
+</header>
+
+<a class="floating-line btn-line-sm" href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener" aria-label="LINEで申し込み・相談">
+  <svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.66 2 10.16c0 4.03 3.55 7.4 8.35 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.9.56 1.1-.46 5.94-3.5 8.1-5.99C21.4 13.4 22 11.86 22 10.16 22 5.66 17.52 2 12 2z"/></svg>
+  LINEで相談
+</a>
+
+<div id="top"></div>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow">🌷 はじめての方も、安心してどうぞ</span>
+      <h1 class="round">心理学を、<span class="ac">たのしく</span>。<br>やさしく自分を癒す時間へ。</h1>
+      <p class="lead">「なんだか毎日しんどいな」——そんな気持ちも、大丈夫。<br>心のしくみをたのしく学びながら、あなたのペースで、少しずつ自分を癒していきましょう。ここは、否定のない、あたたかくて安心・安全な場所です。</p>
+      <div class="hero-cta">
+        <a class="btn-line" href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">
+          <svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.66 2 10.16c0 4.03 3.55 7.4 8.35 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.9.56 1.1-.46 5.94-3.5 8.1-5.99C21.4 13.4 22 11.86 22 10.16 22 5.66 17.52 2 12 2z"/></svg>
+          まずはLINEで、気軽にお話し
+        </a>
+      </div>
+      <p class="hero-note">※ お申し込み・ご相談・ご質問は、すべて公式LINEで承っています。</p>
+    </div>
+    <div class="hero-art">
+      <img src="images/hero.jpg" alt="オンラインで、たのしく心理学を学ぶみなさんのイラスト" width="900" height="900">
+    </div>
+  </div>
+</section>
+
+<!-- ===== 安心ポイント ===== -->
+<div class="safe wrap">
+  <div class="safe-grid">
+    <div class="safe-card">
+      <svg class="ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#f1ecfc"/><path d="M32 46c-10-6-16-12-16-20a8 8 0 0 1 16-3 8 8 0 0 1 16 3c0 8-6 14-16 20z" fill="#b7a4e6"/></svg>
+      <h3 class="round">はじめてでも大丈夫</h3>
+      <p>むずかしい知識は必要ありません。基礎からゆっくり、ていねいにお伝えします。</p>
+    </div>
+    <div class="safe-card">
+      <svg class="ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#fff0e8"/><circle cx="32" cy="32" r="16" fill="none" stroke="#ffc7ad" stroke-width="5"/><path d="M32 22v11l7 5" stroke="#f0a184" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+      <h3 class="round">あなたのペースで</h3>
+      <p>少人数やプライベートも選べるから、無理なく、心地よく続けられます。</p>
+    </div>
+    <div class="safe-card">
+      <svg class="ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#e9f8f1"/><path d="M32 16l4 10 11 1-8 7 2 11-9-6-9 6 2-11-8-7 11-1z" fill="#a6e2c8"/></svg>
+      <h3 class="round">安心・安全な場所</h3>
+      <p>否定のない、あたたかい雰囲気。ありのままの気持ちをひらける場を大切にしています。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== はじめに ===== -->
+<section class="intro" id="about">
+  <div class="wrap">
+    <span class="pill">ABOUT</span>
+    <p class="quote round"><span>心のしくみを知ることは、</span><br>自分にやさしくなれる、<br><span>いちばんの近道。</span></p>
+    <p>毎日の悩みの多くは、人と人との関わりの中で生まれます。相手の言葉に振り回されたり、自分の気持ちの理由がわからなくて苦しくなったり——。この講座では、心理学を一つひとつやさしく学びながら、「わたしはこう感じる癖があるんだな」と、自分のことを知っていきます。学ぶほどに、まわりの人にもやさしくなれて、そして何より、あなた自身がふわっと軽くなっていきますよ。</p>
+    <div class="merit">
+      <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="26" fill="#a6e2c8"/><path d="M26 38c-8-5-13-9-13-16a6.5 6.5 0 0 1 13-2.4A6.5 6.5 0 0 1 39 22c0 7-5 11-13 16z" fill="#fff"/></svg>
+      <p><b>心の作用を学ぶことで</b>、相手の態度や言葉から、相手の想いや背景を汲み取ることができます。また、自分の想いに気付くことができ、自己を癒すことができます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 講座 ===== -->
+<section class="courses" id="self">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">STEP UP PROGRAM</span>
+      <h2 class="ja round">自分を癒す、心理学講座</h2>
+      <p>入門から上級まで、小さな芽が花ひらくように、少しずつ成長していける全4ステップ。各コースは全6回（1回2時間）。修了ごとに、VCAオリジナル修了証をお渡しします🌱</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-top">
+          <svg class="grow" viewBox="0 0 66 66" aria-hidden="true"><ellipse cx="33" cy="58" rx="20" ry="5" fill="#e9f8f1"/><path d="M22 46h22l-3 12H25z" fill="#ffc7ad"/><path d="M33 46c0-10-6-14-12-14 0 8 4 14 12 14z" fill="#a6e2c8"/><path d="M33 46c0-12 7-16 14-16 0 9-5 16-14 16z" fill="#5cbf99"/><path d="M33 30v18" stroke="#5cbf99" stroke-width="3" stroke-linecap="round"/></svg>
+          <div><div class="step">STEP 1 ・ 入門コース</div><h3 class="round">基礎から、やさしく</h3></div>
+        </div>
+        <p class="desc">心理学のことばを、基礎からゆっくり。心のしくみを知ることで、相手の想いや背景をくみとり、自分自身を癒していく——はじめの一歩のコースです。</p>
+        <div class="curriculum"><b>学ぶこと</b>：ニーズ・喪失 ／ ハートブレイク・復讐 ／ 投影・シャドー ／ 罪悪感 ／ コントロール・パワーストラグル ／ リーダーシップ</div>
+        <div class="meta">
+          <div class="row"><span class="k">回数</span><span class="v">全6回（各2時間）</span></div>
+          <div class="row"><span class="k">対象</span><span class="v">どなたでも受講いただけます</span></div>
+          <div class="row"><span class="k">受講料</span><span class="v"><span class="price">グループ ¥33,000</span> ／ プライベート・セミプライベート ¥46,200（税込）</span></div>
+          <div class="row"><span class="k">特典</span><span class="v">VCAオリジナル修了証</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <svg class="grow" viewBox="0 0 66 66" aria-hidden="true"><ellipse cx="33" cy="58" rx="20" ry="5" fill="#e9f8f1"/><path d="M33 56V24" stroke="#5cbf99" stroke-width="3" stroke-linecap="round"/><path d="M33 40c-2-10-10-12-16-11 1 9 7 13 16 11z" fill="#a6e2c8"/><path d="M33 34c2-11 10-13 17-12-1 10-8 14-17 12z" fill="#5cbf99"/><path d="M33 48c-2-8-8-9-13-8 1 7 6 10 13 8z" fill="#a6e2c8"/></svg>
+          <div><div class="step">STEP 2 ・ 初級コース</div><h3 class="round">自分の“癖”に気づく</h3></div>
+        </div>
+        <p class="desc">「わたしって、こう感じる癖があったんだ」。自分を見つめるセルフカウンセリングの力を育てながら、感じ方のパターンや考え方の癖に、やさしく気づいていきます。</p>
+        <div class="meta">
+          <div class="row"><span class="k">回数</span><span class="v">全6回（各2時間）</span></div>
+          <div class="row"><span class="k">対象</span><span class="v">入門コース修了者</span></div>
+          <div class="row"><span class="k">受講料</span><span class="v"><span class="price">グループ ¥33,000</span> ／ プライベート・セミプライベート ¥46,200（税込）</span></div>
+          <div class="row"><span class="k">特典</span><span class="v">VCAオリジナル修了証</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <svg class="grow" viewBox="0 0 66 66" aria-hidden="true"><ellipse cx="33" cy="58" rx="20" ry="5" fill="#e9f8f1"/><path d="M33 56V22" stroke="#5cbf99" stroke-width="3" stroke-linecap="round"/><circle cx="33" cy="18" r="9" fill="#ffb6d0"/><path d="M33 20c-3-9-11-11-17-10 1 9 8 13 17 10z" fill="#a6e2c8"/><path d="M33 30c3-10 11-12 18-11-1 10-9 14-18 11z" fill="#5cbf99"/></svg>
+          <div><div class="step">STEP 3 ・ 中級コース</div><h3 class="round">心を、深く読みとく</h3></div>
+        </div>
+        <p class="desc">心の中で起きる、少し複雑なしくみをやさしくほどいていくコース。まわりの人や自分の心の状態を、より深く、あたたかく理解できるようになります。</p>
+        <div class="meta">
+          <div class="row"><span class="k">回数</span><span class="v">全6回（各2時間）</span></div>
+          <div class="row"><span class="k">対象</span><span class="v">入門・初級コース修了者</span></div>
+          <div class="row"><span class="k">受講料</span><span class="v"><span class="price">グループ ¥33,000</span> ／ プライベート・セミプライベート ¥46,200（税込）</span></div>
+          <div class="row"><span class="k">特典</span><span class="v">VCAオリジナル修了証</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <svg class="grow" viewBox="0 0 66 66" aria-hidden="true"><ellipse cx="33" cy="58" rx="20" ry="5" fill="#e9f8f1"/><path d="M33 56V30" stroke="#5cbf99" stroke-width="3" stroke-linecap="round"/><g fill="#ffb6d0"><ellipse cx="33" cy="14" rx="7" ry="10"/><ellipse cx="33" cy="14" rx="10" ry="7"/><ellipse cx="26" cy="10" rx="7" ry="9" transform="rotate(-40 26 10)"/><ellipse cx="40" cy="10" rx="7" ry="9" transform="rotate(40 40 10)"/></g><circle cx="33" cy="14" r="5" fill="#ffe1a6"/><path d="M33 34c3-9 11-11 18-10-1 9-9 13-18 10z" fill="#5cbf99"/></svg>
+          <div><div class="step">STEP 4 ・ 上級コース</div><h3 class="round">わたしの未来を描く</h3></div>
+        </div>
+        <p class="desc">新しい一歩へのヒントがいっぱい。自分の「こうありたい」というビジョンを見つめ、これからの姿をのびのびと描いていく、うれしい集大成のコースです。</p>
+        <div class="meta">
+          <div class="row"><span class="k">回数</span><span class="v">全6回（各2時間）</span></div>
+          <div class="row"><span class="k">対象</span><span class="v">入門・初級・中級コース修了者</span></div>
+          <div class="row"><span class="k">受講料</span><span class="v"><span class="price">グループ ¥33,000</span> ／ プライベート・セミプライベート ¥46,200（税込）</span></div>
+          <div class="row"><span class="k">特典</span><span class="v">VCAオリジナル修了証</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reward">
+      <span class="pill">SPECIAL</span>
+      <h3 class="round">4つのコースを、修了された方へ</h3>
+      <p>入門から上級まで、すべて修了された方には、VCA認定資格「心理サポーター」を発行。さらに、協会指定のセミナーへご招待します。ここまで来たあなたを、心から応援しています🌸</p>
+      <span class="cert">🎓 VCA認定資格「心理サポーター」</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4つの約束 ===== -->
+<section class="promise" id="promise">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">OUR PROMISE</span>
+      <h2 class="ja round">安心・安全な場のための、4つの約束</h2>
+      <p>ここは、ありのままの気持ちを安心してひらける場所。みんなが心地よく過ごせるように、ご参加のみなさまと、この4つをお約束しています。</p>
+    </div>
+    <div class="promise-grid">
+      <div class="p-card"><div class="p-num round">1</div><div><h4 class="round">意欲を持って取り組みます</h4><p>「気づこう」とする気持ちが、いちばん大切。あなたのペースで、やさしく向き合っていきましょう。</p></div></div>
+      <div class="p-card"><div class="p-num round">2</div><div><h4 class="round">分かち合いを大切にします</h4><p>ペア（バディ）や全体での分かち合いでは、相手のお話をしっかり傾聴します。聴きあうことで、学びが深まります。</p></div></div>
+      <div class="p-card"><div class="p-num round">3</div><div><h4 class="round">知った個人情報は口外しません</h4><p>この場で知ったことは、外にはお話ししません。安心して自己開示できる環境を、みんなで作ります。</p></div></div>
+      <div class="p-card"><div class="p-num round">4</div><div><h4 class="round">他の方のご迷惑になることはしません</h4><p>営業活動や勧誘など、他の受講者の迷惑になる行為はいたしません。あたたかい場を、大切に守ります。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 受講について ===== -->
+<section class="about-course" id="detail">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">HOW TO JOIN</span>
+      <h2 class="ja round">受講について</h2>
+      <p>おうちにいながら、リラックスして受けられます。ご不明な点は、いつでもLINEでお気軽におたずねください。</p>
+    </div>
+    <div class="ac-grid">
+      <div class="ac-card">
+        <div class="h"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="9" width="30" height="20" rx="4" fill="#aad7f2"/><rect x="16" y="31" width="8" height="3" rx="1.5" fill="#7d6bc0"/><circle cx="20" cy="19" r="5" fill="#fff"/></svg><h4 class="round">オンライン（Zoom）</h4></div>
+        <p>Zoomを使ったオンライン開催です。おうちから、ほっとする空間で参加できます。</p>
+        <p class="small">※ 事前にアプリの準備・接続確認をお願いします。安心して自己開示できるよう、イヤホンのご使用がおすすめです。</p>
+      </div>
+      <div class="ac-card">
+        <div class="h"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="8" y="6" width="24" height="28" rx="4" fill="#c9b8f0"/><rect x="13" y="12" width="14" height="2.5" rx="1.2" fill="#fff"/><rect x="13" y="18" width="14" height="2.5" rx="1.2" fill="#fff"/><rect x="13" y="24" width="9" height="2.5" rx="1.2" fill="#fff"/></svg><h4 class="round">ご準備いただくもの</h4></div>
+        <p>スマートフォンでも参加できますが、パワーポイントを使うため、画面の大きなタブレットやパソコンがおすすめです。</p>
+        <p class="small">※ テキストは、郵送（手数料・送料300円）または PDF でお届けします。</p>
+      </div>
+      <div class="ac-card">
+        <div class="h"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="11" width="28" height="18" rx="4" fill="#a6e2c8"/><rect x="6" y="16" width="28" height="4" fill="#5cbf99"/><rect x="10" y="23" width="8" height="3" rx="1.5" fill="#fff"/></svg><h4 class="round">お支払い方法</h4></div>
+        <p>銀行振込、または PayPal（各種クレジットカード）がご利用いただけます。</p>
+        <p class="small">※ ご入金の確認後に、お申し込み完了となります。</p>
+      </div>
+      <div class="ac-card">
+        <div class="h"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15" fill="#ffc7ad"/><path d="M20 12v8l6 4" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg><h4 class="round">日程について</h4></div>
+        <p>1回目の日程を決めたあとは、参加者のみなさんで相談しながら進めていきます。</p>
+        <p class="small">※ 最新の開催日程は、LINEでお気軽におたずねください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 料金 ===== -->
+<section class="price-sec" id="price">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">PRICE</span>
+      <h2 class="ja round">受講料のご案内</h2>
+      <p>入門から上級まで、各コース共通の受講料です。ご希望の受講スタイルをお選びいただけます。</p>
+    </div>
+    <div class="table-scroll">
+      <table class="price-table">
+        <thead>
+          <tr><th>受講スタイル</th><th>人数</th><th>受講料（税込）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>プライベート／セミプライベート</td><td>1〜3名</td><td>¥46,200</td></tr>
+          <tr><td>グループ</td><td>4名以上</td><td>¥33,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">※ 料金はすべて税込です。テキストの郵送をご希望の場合は、送料・手数料として +¥300 いただきます。<br>くわしい日程やお支払い方法は、LINEでお気軽におたずねください。</p>
+  </div>
+</section>
+
+<!-- ===== 講師紹介 ===== -->
+<section class="profile" id="profile">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">FACILITATOR</span>
+      <h2 class="ja round">講師のご紹介</h2>
+    </div>
+    <div class="prof-card">
+      <div class="prof-photo">
+        <div class="avatar">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="60" fill="#fff0e8"/><circle cx="60" cy="48" r="24" fill="#ffe3d6"/><path d="M36 44c0-16 11-26 24-26s24 9 24 25c0 5-3 7-6 7-2-8-9-12-18-12s-16 4-18 12c-3 0-6-2-6-6z" fill="#7d6bc0"/><path d="M52 54c1-2 4-2 5 0M63 54c1-2 4-2 5 0" stroke="#7d6bc0" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M55 62c2 2 8 2 10 0" stroke="#7d6bc0" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="46" cy="58" r="4" fill="#ffb6d0" opacity=".6"/><circle cx="74" cy="58" r="4" fill="#ffb6d0" opacity=".6"/><path d="M32 118c2-26 14-38 28-38s26 12 28 38z" fill="#a6e2c8"/></svg>
+        </div>
+        <div class="en">VCA FACILITATOR</div>
+        <div class="name round">おけいはん</div>
+      </div>
+      <div class="prof-body">
+        <p class="lead">家族の病気発覚をきっかけに、あちこちのセミナーへ顔を出すうちに、たまたま知ったVCA。</p>
+        <p>昔から興味のあった心理学が学べると聞いて、2012年9月から受講をスタートしました。心の仕組みを学び、気持ちを共有しあい、自分にとっての幸せを見つけ出していく——毎月2時間の体験は、かけがえのないものでした。</p>
+        <p>ここで出会った仲間と受講後もつながり、お互いの変化や成長を知ることで、自分自身の成長も再確認させてもらっています。VCAでの学びと体験は、その後の生活でいつも今の私を励まし、夢を叶える原動力になってくれているのです。</p>
+        <p>このページにたどり着き、VCAに興味を持ってくださったみなさまに、これからもこの体験を届けていきたいと思っています。あなたにとっての幸せを見つけ、共にビジョンを実現していく——そんなつながりの輪を、いっしょに広げていきましょう🌸</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="wrap">
+    <svg class="heart" viewBox="0 0 56 56" aria-hidden="true"><path d="M28 50C14 41 6 34 6 23a11 11 0 0 1 22-4 11 11 0 0 1 22 4c0 11-8 18-22 27z" fill="#ffb6d0"/></svg>
+    <h2 class="round">まずは、LINEでお話ししましょう</h2>
+    <p>「どのコースが合うかな？」「わたしでも大丈夫かな？」——そんな小さな気持ちも大歓迎です。むずかしく考えなくて大丈夫。あなたのペースで、はじめの一歩をお手伝いします。</p>
+    <div class="steps">
+      <span>1. LINEを友だち追加</span>
+      <span>2. 気になることを送る</span>
+      <span>3. やさしくご案内</span>
+    </div>
+    <a class="btn-line" href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">
+      <svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.66 2 10.16c0 4.03 3.55 7.4 8.35 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.9.56 1.1-.46 5.94-3.5 8.1-5.99C21.4 13.4 22 11.86 22 10.16 22 5.66 17.52 2 12 2z"/></svg>
+      公式LINEで申し込む・相談する
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="brand round" style="display:inline-flex;align-items:center;gap:8px;">
+      <svg class="dot" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#fff" opacity=".2"/><path d="M20 30c-6-4-10-7.5-10-12a5.4 5.4 0 0 1 10-2 5.4 5.4 0 0 1 10 2c0 4.5-4 8-10 12z" fill="#fff"/></svg>
+      OK Room
+    </span>
+    <div>お申し込み・お問い合わせ：<a href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">公式LINE</a></div>
+    <p class="note">
+      本講座は、一般財団法人 日本ビジョンクリエーション協会（VCA）のプログラムにもとづいて提供しています。<br>
+      掲載の料金はすべて税込表示です。© OK Room
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
