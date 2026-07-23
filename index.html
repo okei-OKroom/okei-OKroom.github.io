@@ -66,6 +66,15 @@
   .lc-card .tag{background:var(--gold-tint);color:var(--gold);}
   .lc-card .go{background:var(--gold);}
 
+  .radio-band{display:flex;align-items:center;gap:22px;margin-top:28px;text-decoration:none;background:linear-gradient(120deg,var(--tint-mint) 0%,var(--surface) 60%);border:1px solid var(--border);border-radius:30px;padding:24px 28px;box-shadow:var(--shadow-sm);transition:transform .2s ease, box-shadow .2s ease;}
+  .radio-band:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .radio-band .ic{width:58px;height:58px;flex:none;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--mint-deep);box-shadow:var(--shadow-sm);}
+  .radio-band .txt{flex:1;min-width:0;}
+  .radio-band h2{font-family:"Zen Maru Gothic",serif;font-size:1.3rem;font-weight:700;color:var(--mint-deep);margin:0 0 6px;}
+  .radio-band p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+  .radio-band .go{flex:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;border-radius:999px;padding:11px 22px;color:#fff;background:var(--mint-deep);box-shadow:var(--shadow-sm);}
+  @media(max-width:640px){.radio-band{flex-direction:column;text-align:center;padding:26px 22px;}}
+
   .cta{background:radial-gradient(700px 340px at 50% 120%,var(--tint-lav) 0%,transparent 70%),var(--surface);text-align:center;padding:72px 0;}
   .cta .heart{width:56px;height:56px;margin:0 auto 8px;}
   .cta h2{font-family:"Zen Maru Gothic",serif;font-size:clamp(1.5rem,3.8vw,2.1rem);color:var(--lav-deep);margin:0 0 16px;font-weight:700;}
@@ -91,6 +100,7 @@
     <nav class="nav-links">
       <a href="course.html">心理学講座</a>
       <a href="life-compass.html">Life Compass Session</a>
+      <a href="life-design-essence.html">ラジオ番組</a>
       <a class="btn-line-sm" href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">
         <svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.66 2 10.16c0 4.03 3.55 7.4 8.35 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.9.56 1.1-.46 5.94-3.5 8.1-5.99C21.4 13.4 22 11.86 22 10.16 22 5.66 17.52 2 12 2z"/></svg>
         LINEで相談
@@ -141,6 +151,23 @@
     </a>
 
   </div>
+
+  <div class="wrap">
+    <a class="radio-band" href="life-design-essence.html">
+      <span class="ic" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="2" width="6" height="11" rx="3"/>
+          <path d="M5 11a7 7 0 0 0 14 0"/>
+          <path d="M12 18v4M9 22h6"/>
+        </svg>
+      </span>
+      <span class="txt">
+        <h2 class="round">ラジオ番組「Life Design Essence」</h2>
+        <p>心と体、人生を整えるヒントになる話題をお届けしている stand.fm の番組です。エピソード一覧はこちらから聴けます。</p>
+      </span>
+      <span class="go">エピソード一覧へ →</span>
+    </a>
+  </div>
 </section>
 
 <section class="cta">
@@ -161,7 +188,7 @@
       <svg class="dot" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#fff" opacity=".2"/><path d="M20 30c-6-4-10-7.5-10-12a5.4 5.4 0 0 1 10-2 5.4 5.4 0 0 1 10 2c0 4.5-4 8-10 12z" fill="#fff"/></svg>
       OK Room
     </span>
-    <div><a href="course.html">心理学講座</a> ｜ <a href="life-compass.html">Life Compass Session</a> ｜ <a href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">公式LINE</a></div>
+    <div><a href="course.html">心理学講座</a> ｜ <a href="life-compass.html">Life Compass Session</a> ｜ <a href="life-design-essence.html">ラジオ番組</a> ｜ <a href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">公式LINE</a></div>
     <p class="note">© OK Room</p>
   </div>
 </footer>
