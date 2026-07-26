@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OK Room ｜ こころをととのえる、ふたつの時間</title>
-<meta name="description" content="OK Roomは、やさしく心理学を学ぶ講座と、あなたの北極星を見つけるLife Compass Sessionをお届けしています。お申し込み・ご相談はLINEから。">
+<title>OK Room ｜ 心理学と YUKINE、こころと人生をととのえる</title>
+<meta name="description" content="OK Roomは「心理学」と「YUKINE」のふたつの世界から、こころと人生をととのえるお手伝いをしています。やさしく学ぶVCA心理学講座・Life Compass Session、そしてYUKINEジュエリースタイリストによるジュエリー提案・リーディング・講座。お申し込み・ご相談はLINEから。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
     --pink:#ffb6d0;--mint:#a6e2c8;--mint-deep:#5cbf99;--yellow:#ffe1a6;
     --tint-lav:#f1ecfc;--tint-peach:#fff0e8;--tint-mint:#e9f8f1;
     --gold:#b08d4f;--gold-tint:#f6efe2;
+    --rose:#d98aa6;--rose-deep:#c26f8e;--tint-rose:#fdeef4;
     --border:#f0e7f5;--shadow:0 14px 34px rgba(150,120,200,.14);--shadow-sm:0 8px 20px rgba(150,120,200,.10);
   }
   *{box-sizing:border-box;}
@@ -23,6 +24,7 @@
   .round{font-family:"Zen Maru Gothic",serif;}
   .wrap{width:min(1040px,92%);margin-inline:auto;}
   a{color:inherit;}
+  img{max-width:100%;}
 
   header.site{position:sticky;top:0;z-index:50;background:rgba(255,247,251,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;}
@@ -40,13 +42,34 @@
   .btn-line-sm{padding:10px 20px;font-size:.85rem;}
   .li{width:20px;height:20px;flex:none;fill:#fff;}
 
-  .hero{position:relative;overflow:hidden;padding:72px 0 60px;text-align:center;background:radial-gradient(680px 380px at 82% 0%,var(--tint-peach) 0%,transparent 60%),radial-gradient(620px 420px at 12% 10%,var(--tint-lav) 0%,transparent 60%),linear-gradient(180deg,#fffdfe 0%,var(--bg) 100%);}
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:76px 0 64px;text-align:center;background:radial-gradient(680px 380px at 82% 0%,var(--tint-peach) 0%,transparent 60%),radial-gradient(620px 420px at 12% 8%,var(--tint-lav) 0%,transparent 60%),radial-gradient(560px 360px at 90% 100%,var(--tint-rose) 0%,transparent 60%),linear-gradient(180deg,#fffdfe 0%,var(--bg) 100%);}
   .hero .eyebrow{display:inline-block;background:#fff;color:var(--lav-deep);border:1px solid var(--border);border-radius:999px;padding:7px 18px;font-size:.78rem;font-weight:500;margin-bottom:22px;box-shadow:var(--shadow-sm);}
-  .hero h1{font-family:"Zen Maru Gothic",serif;font-weight:700;color:var(--lav-deep);font-size:clamp(1.7rem,4.8vw,2.7rem);line-height:1.6;margin:0 0 18px;}
+  .hero h1{font-family:"Zen Maru Gothic",serif;font-weight:700;color:var(--lav-deep);font-size:clamp(1.7rem,4.8vw,2.7rem);line-height:1.55;margin:0 0 18px;}
   .hero h1 .ac{color:var(--peach-deep);}
-  .hero p.lead{color:var(--ink);font-size:1.02rem;max-width:640px;margin:0 auto;}
+  .hero p.lead{color:var(--ink);font-size:1.02rem;max-width:660px;margin:0 auto 30px;}
+  .hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:640px;margin:0 auto;}
+  @media(max-width:540px){.hero-cards{grid-template-columns:1fr;}}
+  .hc{position:relative;display:block;border-radius:24px;overflow:hidden;text-decoration:none;box-shadow:var(--shadow-sm);aspect-ratio:16/10;transition:transform .18s ease, box-shadow .18s ease;}
+  .hc:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .hc img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
+  .hc:hover img{transform:scale(1.05);}
+  .hc .cap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;color:#fff;font-family:"Zen Maru Gothic",serif;font-weight:700;font-size:1.05rem;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .hc.psy .cap{background:linear-gradient(to top,rgba(125,107,192,.9),rgba(125,107,192,.08));}
+  .hc.ykc .cap{background:linear-gradient(to top,rgba(194,111,142,.9),rgba(194,111,142,.08));}
 
-  .menu{padding:56px 0 84px;}
+  /* pillar */
+  .pillar{padding:70px 0 20px;}
+  .pillar-head{text-align:center;max-width:620px;margin:0 auto 40px;}
+  .plabel{display:inline-block;border-radius:999px;padding:6px 18px;font-size:.74rem;font-weight:700;letter-spacing:.12em;margin-bottom:16px;}
+  .pillar-head h2{font-family:"Zen Maru Gothic",serif;font-size:clamp(1.5rem,3.6vw,2.1rem);margin:0 0 12px;font-weight:700;}
+  .pillar-head p{margin:0;font-size:.96rem;color:var(--ink-soft);}
+  .psy .plabel{background:var(--tint-lav);color:var(--lav-deep);}
+  .psy .pillar-head h2{color:var(--lav-deep);}
+  .yk .plabel{background:var(--tint-rose);color:var(--rose-deep);}
+  .yk .pillar-head h2{color:var(--rose-deep);}
+
+  /* cards (psychology) */
   .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
   @media(max-width:820px){.menu-grid{grid-template-columns:1fr;max-width:560px;margin-inline:auto;}}
   .m-card{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:30px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .2s ease, box-shadow .2s ease;}
@@ -56,32 +79,50 @@
   .m-card:hover .img img{transform:scale(1.04);}
   .m-card .tag{position:absolute;top:16px;left:16px;border-radius:999px;padding:7px 16px;font-size:.74rem;font-weight:700;box-shadow:var(--shadow-sm);}
   .m-card .body{padding:26px 28px 30px;}
-  .m-card h2{font-family:"Zen Maru Gothic",serif;font-size:1.45rem;margin:0 0 8px;font-weight:700;}
+  .m-card h3{font-family:"Zen Maru Gothic",serif;font-size:1.45rem;margin:0 0 8px;font-weight:700;}
   .m-card p{margin:0 0 18px;font-size:.92rem;color:var(--ink-soft);}
   .m-card .go{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.95rem;border-radius:999px;padding:11px 24px;color:#fff;box-shadow:var(--shadow-sm);}
-  .course-card h2{color:var(--lav-deep);}
+  .course-card h3{color:var(--lav-deep);}
   .course-card .tag{background:var(--tint-lav);color:var(--lav-deep);}
   .course-card .go{background:var(--lav);}
-  .lc-card h2{color:var(--gold);}
+  .lc-card h3{color:var(--gold);}
   .lc-card .tag{background:var(--gold-tint);color:var(--gold);}
   .lc-card .go{background:var(--gold);}
 
-  .radio-band{display:flex;align-items:center;gap:22px;margin-top:28px;text-decoration:none;background:linear-gradient(120deg,var(--tint-mint) 0%,var(--surface) 60%);border:1px solid var(--border);border-radius:30px;padding:24px 28px;box-shadow:var(--shadow-sm);transition:transform .2s ease, box-shadow .2s ease;}
+  /* YUKINE section */
+  .yk{background:linear-gradient(180deg,transparent 0%,var(--tint-rose) 40%,var(--tint-rose) 100%);margin-top:40px;border-radius:40px 40px 0 0;}
+  .yk-feature{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:30px;overflow:hidden;box-shadow:var(--shadow-sm);}
+  .yk-feature .ph{margin:0;height:100%;min-height:280px;}
+  .yk-feature .ph img{width:100%;height:100%;object-fit:cover;display:block;}
+  .yk-feature .ft{padding:30px 34px 34px;}
+  .yk-feature h3{font-family:"Zen Maru Gothic",serif;font-size:1.5rem;color:var(--rose-deep);margin:0 0 6px;font-weight:700;}
+  .yk-feature .en{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);font-weight:500;margin-bottom:14px;}
+  .yk-feature p{margin:0 0 22px;font-size:.94rem;color:var(--ink);}
+  .yk-feature .go{display:inline-flex;align-items:center;gap:8px;background:var(--rose);color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;border-radius:999px;padding:13px 28px;box-shadow:var(--shadow-sm);transition:transform .15s ease, box-shadow .15s ease;}
+  .yk-feature .go:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+  @media(max-width:760px){.yk-feature{grid-template-columns:1fr;}.yk-feature .ph{min-height:220px;}}
+
+  .svc-title{text-align:center;font-family:"Zen Maru Gothic",serif;font-size:1.1rem;color:var(--rose-deep);font-weight:700;margin:44px 0 22px;}
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding-bottom:16px;}
+  @media(max-width:680px){.svc-grid{grid-template-columns:1fr;}}
+  .svc{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:20px 22px;box-shadow:var(--shadow-sm);}
+  .svc .gem{flex:none;width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--tint-rose);color:var(--rose-deep);}
+  .svc h4{margin:0 0 4px;font-family:"Zen Maru Gothic",serif;font-size:1.02rem;font-weight:700;color:var(--ink);}
+  .svc p{margin:0;font-size:.85rem;color:var(--ink-soft);line-height:1.75;}
+  .svc .lv{display:inline-block;margin-top:8px;font-size:.7rem;font-weight:700;color:var(--rose-deep);background:var(--tint-rose);border-radius:999px;padding:3px 10px;letter-spacing:.06em;}
+
+  /* radio band */
+  .radio-band{display:flex;align-items:center;gap:22px;margin:40px 0 10px;text-decoration:none;background:linear-gradient(120deg,var(--tint-mint) 0%,var(--surface) 60%);border:1px solid var(--border);border-radius:30px;padding:24px 28px;box-shadow:var(--shadow-sm);transition:transform .2s ease, box-shadow .2s ease;}
   .radio-band:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
   .radio-band .ic{width:58px;height:58px;flex:none;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--mint-deep);box-shadow:var(--shadow-sm);}
   .radio-band .txt{flex:1;min-width:0;}
-  .radio-band h2{font-family:"Zen Maru Gothic",serif;font-size:1.3rem;font-weight:700;color:var(--mint-deep);margin:0 0 6px;}
+  .radio-band h3{font-family:"Zen Maru Gothic",serif;font-size:1.3rem;font-weight:700;color:var(--mint-deep);margin:0 0 6px;}
   .radio-band p{margin:0;font-size:.9rem;color:var(--ink-soft);}
   .radio-band .go{flex:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;border-radius:999px;padding:11px 22px;color:#fff;background:var(--mint-deep);box-shadow:var(--shadow-sm);}
   @media(max-width:640px){.radio-band{flex-direction:column;text-align:center;padding:26px 22px;}}
-  .radio-band .thumb{width:128px;height:92px;flex:none;border-radius:20px;object-fit:cover;display:block;box-shadow:var(--shadow-sm);}
-  @media(max-width:640px){.radio-band .thumb{width:100%;height:150px;}}
-  .radio-band.yukine{background:linear-gradient(120deg,var(--tint-peach) 0%,var(--surface) 60%);}
-  .radio-band.yukine .ic{color:var(--peach-deep);}
-  .radio-band.yukine h2{color:var(--peach-deep);}
-  .radio-band.yukine .go{background:var(--peach-deep);}
 
-  .cta{background:radial-gradient(700px 340px at 50% 120%,var(--tint-lav) 0%,transparent 70%),var(--surface);text-align:center;padding:72px 0;}
+  /* cta */
+  .cta{background:radial-gradient(700px 340px at 50% 120%,var(--tint-lav) 0%,transparent 70%),var(--surface);text-align:center;padding:72px 0;margin-top:56px;}
   .cta .heart{width:56px;height:56px;margin:0 auto 8px;}
   .cta h2{font-family:"Zen Maru Gothic",serif;font-size:clamp(1.5rem,3.8vw,2.1rem);color:var(--lav-deep);margin:0 0 16px;font-weight:700;}
   .cta p{color:var(--ink);max-width:540px;margin:0 auto 30px;}
@@ -104,10 +145,9 @@
       OK Room<small>こころをととのえる時間</small>
     </a>
     <nav class="nav-links">
-      <a href="course.html">VCA心理学講座</a>
-      <a href="life-compass.html">Life Compass Session</a>
+      <a href="#psychology">心理学</a>
+      <a href="#yukine">YUKINE</a>
       <a href="life-design-essence.html">ラジオ番組</a>
-      <a href="https://okei338.wixsite.com/okroom" target="_blank" rel="noopener">YUKINE room</a>
       <a class="btn-line-sm" href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">
         <svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.66 2 10.16c0 4.03 3.55 7.4 8.35 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.9.56 1.1-.46 5.94-3.5 8.1-5.99C21.4 13.4 22 11.86 22 10.16 22 5.66 17.52 2 12 2z"/></svg>
         LINEで相談
@@ -125,40 +165,119 @@
 <section class="hero">
   <div class="wrap">
     <span class="eyebrow">🌷 OK Room へようこそ</span>
-    <h1 class="round">こころをととのえる、<br><span class="ac">ふたつ</span>の時間。</h1>
-    <p class="lead">心理学をたのしく学んで自分を癒す「講座」と、あなたの中に眠る答えを見つける「Life Compass Session」。どちらも、否定のない、あたたかくて安心・安全な時間です。気になるほうから、のぞいてみてくださいね。</p>
+    <h1 class="round">こころを整え、<span class="ac">人生を輝かせる</span>。</h1>
+    <p class="lead">OK Room は、<b>心理学</b>と<b>YUKINE</b>——ふたつの世界から、あなたの「いま」と「これから」に寄り添います。どちらも、否定のない、あたたかくて安心・安全な時間です。<br>気になるほうから、のぞいてみてくださいね。</p>
+    <div class="hero-cards">
+      <a class="hc psy" href="#psychology">
+        <img src="images/hero.jpg" alt="やわらかな光の差し込む部屋で学ぶイメージ写真" loading="lazy">
+        <span class="cap">心理学の時間へ <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="hc ykc" href="#yukine">
+        <img src="images/yukine.jpg" alt="YUKINE のラビラドライトのペンダント" loading="lazy">
+        <span class="cap">YUKINE の世界へ <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
   </div>
 </section>
 
-<section class="menu">
-  <div class="wrap menu-grid">
+<!-- ===== 心理学 ===== -->
+<section class="pillar psy" id="psychology">
+  <div class="wrap">
+    <div class="pillar-head">
+      <span class="plabel">PSYCHOLOGY ／ 心理学</span>
+      <h2 class="round">こころのしくみを学び、自分を癒す</h2>
+      <p>心のしくみをやさしく学びながら、少しずつ自分を癒し、進みたい方向を見つけていく。おけいがお届けする、心理学の時間です。</p>
+    </div>
 
-    <a class="m-card course-card" href="course.html">
-      <div class="img">
-        <img src="images/hero.jpg" alt="オンラインで、たのしく心理学を学ぶみなさんのイラスト" loading="lazy">
-        <span class="tag">グループ／プライベート講座</span>
-      </div>
-      <div class="body">
-        <h2 class="round">自分を癒す、VCA心理学講座</h2>
-        <p>心のしくみをやさしく学びながら、少しずつ自分を癒していく全4ステップ。入門から上級まで、あなたのペースで進めます。オンライン（Zoom）開催。</p>
-        <span class="go">講座のページへ →</span>
-      </div>
-    </a>
+    <div class="menu-grid">
+      <a class="m-card course-card" href="course.html">
+        <div class="img">
+          <img src="images/hero.jpg" alt="やわらかな光の差し込む部屋で、オンライン講座を受ける机まわりのイメージ" loading="lazy">
+          <span class="tag">グループ／プライベート講座</span>
+        </div>
+        <div class="body">
+          <h3 class="round">自分を癒す、VCA心理学講座</h3>
+          <p>心のしくみをやさしく学びながら、少しずつ自分を癒していく全4ステップ。入門から上級まで、あなたのペースで進めます。オンライン（Zoom）開催。</p>
+          <span class="go">講座のページへ →</span>
+        </div>
+      </a>
 
-    <a class="m-card lc-card" href="life-compass.html">
-      <div class="img">
-        <img src="images/lifecompass.jpg" alt="Life Compass Session ― 北極星と羅針盤のイメージ" loading="lazy">
-        <span class="tag">個人セッション（60分）</span>
-      </div>
-      <div class="body">
-        <h2 class="round">Life Compass Session</h2>
-        <p>「私はどこに向かっているんだろう？」——あなただけの北極星を見つけ、自分の中に眠る答えを呼び覚ます、1対1の対話セッション。オンライン（Zoom）60分。</p>
-        <span class="go">セッションのページへ →</span>
-      </div>
-    </a>
-
+      <a class="m-card lc-card" href="life-compass.html">
+        <div class="img">
+          <img src="images/lifecompass.jpg" alt="Life Compass Session ― 北極星と羅針盤のイメージ" loading="lazy">
+          <span class="tag">個人セッション（60分）</span>
+        </div>
+        <div class="body">
+          <h3 class="round">Life Compass Session</h3>
+          <p>「私はどこに向かっているんだろう？」——あなただけの北極星を見つけ、自分の中に眠る答えを呼び覚ます、1対1の対話セッション。オンライン（Zoom）60分。</p>
+          <span class="go">セッションのページへ →</span>
+        </div>
+      </a>
+    </div>
   </div>
+</section>
 
+<!-- ===== YUKINE ===== -->
+<section class="pillar yk" id="yukine">
+  <div class="wrap">
+    <div class="pillar-head">
+      <span class="plabel">YUKINE ／ Jewelry Stylist</span>
+      <h2 class="round">石と共に、あなたらしさを纏う</h2>
+      <p>YUKINE ジュエリースタイリストとして、あなたに響く石とジュエリーをご提案し、リーディングや講座を通して、石とのつながりを深めるお手伝いをしています。</p>
+    </div>
+
+    <a class="yk-feature" href="https://okei338.wixsite.com/okroom" target="_blank" rel="noopener" style="text-decoration:none;">
+      <figure class="ph">
+        <img src="images/yukine.jpg" alt="YUKINE のラビラドライトのペンダント" loading="lazy">
+      </figure>
+      <div class="ft">
+        <div class="en">YUKINE ROOM ／ since 2004</div>
+        <h3 class="round">YUKINE room</h3>
+        <p>ひとつひとつの石には、それぞれの物語があります。あなたの「今」に寄り添う石を選び、身につけ、読み解く——YUKINE の世界を、ぜひのぞいてみてください。</p>
+        <span class="go">YUKINE room を見る →</span>
+      </div>
+    </a>
+
+    <p class="svc-title">YUKINE のサービス</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="gem" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l4 6-9 12L3 9z"/><path d="M3 9h18M12 3l-3 6 3 12 3-12-3-6z"/></svg></span>
+        <div>
+          <h4>ジュエリー相談・ご提案</h4>
+          <p>あなたに似合い、響く石やジュエリーを、対話をとおして一緒に見つけ、ご提案します。</p>
+        </div>
+      </div>
+
+      <div class="svc">
+        <span class="gem" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5.8L20 9l-4.6 3.8L17 20l-5-3.4L7 20l1.6-7.2L4 9l5.6-1.2z"/></svg></span>
+        <div>
+          <h4>ソウルステージリーディング</h4>
+          <p>いまのあなたの魂の段階（ソウルステージ）に光をあて、これからのヒントをお伝えします。</p>
+        </div>
+      </div>
+
+      <div class="svc">
+        <span class="gem" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2.2 5-5 2.2 2.2-5z" fill="currentColor" stroke="none"/></svg></span>
+        <div>
+          <h4>クリスタルアカシックリーディング</h4>
+          <p>21種類のクリスタルを配して、いま起きていることやこれからの流れを読み解いていきます。</p>
+        </div>
+      </div>
+
+      <div class="svc">
+        <span class="gem" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></span>
+        <div>
+          <h4>クリスタルアカシックコンタクティ講座</h4>
+          <p>リーディングの手法を、基礎から応用まで学べる講座です。</p>
+          <span class="lv">ベーシック ／ アドバンス</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ラジオ番組 ===== -->
+<section class="pillar" style="padding-top:20px;">
   <div class="wrap">
     <a class="radio-band" href="life-design-essence.html">
       <span class="ic" aria-hidden="true">
@@ -169,19 +288,10 @@
         </svg>
       </span>
       <span class="txt">
-        <h2 class="round">ラジオ番組「Life Design Essence」</h2>
+        <h3 class="round">ラジオ番組「Life Design Essence」</h3>
         <p>心と体、人生を整えるヒントになる話題をお届けしている stand.fm の番組です。エピソード一覧はこちらから聴けます。</p>
       </span>
       <span class="go">エピソード一覧へ →</span>
-    </a>
-
-    <a class="radio-band yukine" href="https://okei338.wixsite.com/okroom" target="_blank" rel="noopener">
-      <img class="thumb" src="images/yukine.jpg" alt="意識の地図に並べられた21種類のクリスタル" loading="lazy">
-      <span class="txt">
-        <h2 class="round">YUKINE room ｜ クリスタルアカシックコンタクティ</h2>
-        <p>〜宇宙の計画を知る〜 21種類のクリスタルを配置して、いま起きていることと、これからの流れを読み解いていくセッションです。オンライン（Zoom）開催。</p>
-      </span>
-      <span class="go">くわしく見る →</span>
     </a>
   </div>
 </section>
@@ -190,7 +300,7 @@
   <div class="wrap">
     <svg class="heart" viewBox="0 0 56 56" aria-hidden="true"><path d="M28 50C14 41 6 34 6 23a11 11 0 0 1 22-4 11 11 0 0 1 22 4c0 11-8 18-22 27z" fill="#ffb6d0"/></svg>
     <h2 class="round">迷ったら、LINEでお話ししましょう</h2>
-    <p>「どっちが合うかな？」「まずは話だけ聞いてみたい」——そんな気持ちも大歓迎です。お申し込み・ご相談は、すべて公式LINEで承っています。</p>
+    <p>「どれが合うかな？」「まずは話だけ聞いてみたい」——そんな気持ちも大歓迎です。お申し込み・ご相談は、すべて公式LINEで承っています。</p>
     <a class="btn-line" href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">
       <svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.66 2 10.16c0 4.03 3.55 7.4 8.35 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.9.56 1.1-.46 5.94-3.5 8.1-5.99C21.4 13.4 22 11.86 22 10.16 22 5.66 17.52 2 12 2z"/></svg>
       公式LINEで相談する
@@ -204,7 +314,7 @@
       <svg class="dot" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#fff" opacity=".2"/><path d="M20 30c-6-4-10-7.5-10-12a5.4 5.4 0 0 1 10-2 5.4 5.4 0 0 1 10 2c0 4.5-4 8-10 12z" fill="#fff"/></svg>
       OK Room
     </span>
-    <div><a href="course.html">VCA心理学講座</a> ｜ <a href="life-compass.html">Life Compass Session</a> ｜ <a href="life-design-essence.html">ラジオ番組</a> ｜ <a href="https://okei338.wixsite.com/okroom" target="_blank" rel="noopener">YUKINE room</a> ｜ <a href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">公式LINE</a></div>
+    <div><a href="#psychology">心理学</a> ｜ <a href="course.html">VCA心理学講座</a> ｜ <a href="life-compass.html">Life Compass Session</a> ｜ <a href="#yukine">YUKINE</a> ｜ <a href="https://okei338.wixsite.com/okroom" target="_blank" rel="noopener">YUKINE room</a> ｜ <a href="life-design-essence.html">ラジオ番組</a> ｜ <a href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">公式LINE</a></div>
     <p class="note">© OK Room</p>
   </div>
 </footer>

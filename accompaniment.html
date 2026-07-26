@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伴走コース | Life Compass Session</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf8f5;
+    --cream-dark: #f2ece2;
+    --gold: #b8975a;
+    --brown: #6b4f35;
+    --text: #3a3028;
+    --muted: #8a7a6a;
+    --border: #e0d5c5;
+    --border-light: #ece5d8;
+    --white: #fff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--cream); color: var(--text); font-family: 'Noto Sans JP', sans-serif; font-weight: 300; line-height: 1.7; }
+  .page { max-width: 760px; margin: 0 auto; padding: 0 0 100px; }
+
+  .nav { padding: 20px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--brown); letter-spacing: 0.15em; text-decoration: none; }
+  .nav-back { font-size: 11px; color: var(--muted); letter-spacing: 0.15em; text-decoration: none; }
+  .nav-back:hover { color: var(--gold); }
+
+  .hero { padding: 56px 32px 52px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 200px; gap: 32px; align-items: center; }
+  .eyebrow { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.45em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--brown); letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 14px; }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub { font-family: 'Noto Serif JP', serif; font-size: 12.5px; color: var(--muted); letter-spacing: 0.1em; line-height: 2; margin-bottom: 24px; }
+  .hero-notice { background: var(--cream-dark); border: 1px solid var(--border); border-radius: 2px; padding: 14px 20px; font-size: 12px; color: var(--brown); line-height: 2; }
+  .hero-illust { display: flex; align-items: center; justify-content: center; }
+
+  .section { padding: 56px 32px 0; }
+  .section-label { font-family: 'Cormorant Garamond', serif; font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 36px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .course-card { background: var(--white); border: 1px solid var(--border); border-radius: 2px; margin-bottom: 24px; position: relative; overflow: hidden; }
+  .course-card.featured { border-color: var(--gold); border-width: 1.5px; }
+  .course-img { width: 100%; height: 180px; overflow: hidden; background: #f5ede0; }
+  .course-img svg { display: block; width: 100%; height: 100%; }
+  .course-body { padding: 32px 36px 36px; }
+  .featured-badge { position: absolute; top: 0; right: 0; font-family: 'Cormorant Garamond', serif; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; padding: 5px 18px; background: var(--gold); color: var(--white); }
+  .course-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--brown); margin-bottom: 4px; }
+  .course-name-en { font-family: 'Cormorant Garamond', serif; font-size: 12px; color: var(--muted); letter-spacing: 0.2em; margin-bottom: 24px; }
+  .price-block { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 24px; }
+  .price-main { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--gold); }
+  .price-regular { font-size: 13px; color: #b0a090; text-decoration: line-through; }
+  .price-tag { font-size: 11px; color: var(--gold); background: #f8f2e8; padding: 3px 12px; border-radius: 2px; }
+  .divider { border: none; border-top: 1px solid var(--border-light); margin: 4px 0 22px; }
+  .includes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; margin-bottom: 12px; }
+  .include-item { font-size: 13px; color: #5a4a3a; line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
+  .include-item::before { content: '◇'; color: var(--gold); font-size: 9px; margin-top: 4px; flex-shrink: 0; }
+  .course-note { margin-top: 18px; padding-top: 14px; border-top: 1px dashed #ddd0bb; font-size: 12px; color: var(--muted); line-height: 1.9; font-style: italic; font-family: 'Noto Serif JP', serif; }
+
+  .flow-list { list-style: none; }
+  .flow-item { display: flex; gap: 0; align-items: stretch; margin-bottom: 16px; }
+  .flow-left { display: flex; flex-direction: column; align-items: center; min-width: 60px; }
+  .flow-num { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #d0c0a4; width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: var(--white); }
+  .flow-line { width: 1px; background: var(--border-light); flex: 1; margin-top: 4px; min-height: 16px; }
+  .flow-item:last-child .flow-line { display: none; }
+  .flow-content { background: var(--white); border: 1px solid var(--border); border-radius: 2px; padding: 16px 22px; margin-left: 16px; flex: 1; display: flex; gap: 18px; align-items: center; }
+  .flow-illust-wrap { flex-shrink: 0; width: 58px; height: 58px; border-radius: 50%; overflow: hidden; }
+  .flow-illust-wrap img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85) sepia(0.2); display: block; }
+  .flow-title { font-size: 14px; font-weight: 400; color: var(--brown); margin-bottom: 4px; font-family: 'Noto Serif JP', serif; }
+  .flow-desc { font-size: 12px; color: var(--muted); line-height: 1.9; }
+
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .work-item { background: var(--white); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; text-align: center; }
+  .work-img { height: 110px; background: #f7f0e4; overflow: hidden; }
+  .work-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85) sepia(0.2); display: block; }
+  .work-body { padding: 20px 16px 24px; }
+  .work-title { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--brown); margin-bottom: 6px; }
+  .work-price { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--gold); margin-bottom: 8px; }
+  .work-desc { font-size: 11.5px; color: var(--muted); line-height: 1.8; }
+  .work-note { margin-top: 14px; font-size: 11.5px; color: var(--muted); line-height: 1.9; }
+
+
+  .cta { text-align: center; padding: 64px 32px 0; }
+  .cta-text { font-family: 'Noto Serif JP', serif; font-size: 13px; color: var(--muted); line-height: 2.2; margin-bottom: 32px; }
+  .cta-btn { display: inline-block; padding: 16px 52px; background: var(--brown); color: var(--cream); font-size: 13px; letter-spacing: 0.25em; text-decoration: none; font-family: 'Noto Sans JP', sans-serif; font-weight: 300; }
+  .cta-btn:hover { background: #8a6545; }
+  .cta-note { margin-top: 20px; font-size: 11px; color: #c0b0a0; letter-spacing: 0.12em; }
+
+  .footer { text-align: center; padding: 48px 32px 0; border-top: 1px solid var(--border); margin-top: 80px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--brown); letter-spacing: 0.15em; margin-bottom: 8px; }
+  .footer-sub { font-size: 11px; color: var(--muted); letter-spacing: 0.2em; }
+
+  @media (max-width: 600px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-illust { display: none; }
+    .includes-grid { grid-template-columns: 1fr; }
+    .course-body { padding: 22px 18px; }
+    .work-grid { grid-template-columns: 1fr; }
+    .yukine-grid { grid-template-columns: 1fr; }
+    .section { padding: 44px 20px 0; }
+    .nav { padding: 16px 20px; }
+    .cta { padding: 52px 20px 0; }
+    .flow-content { flex-direction: column; gap: 10px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="life-compass.html" class="nav-logo">Life Compass Session</a>
+    <a href="life-compass.html" class="nav-back">← フロントページへ</a>
+  </nav>
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Accompaniment Course</p>
+      <h1>あなたの旅に、<em>伴走者</em>を。</h1>
+      <p class="hero-sub">
+        スタートアップ・セッションで見つけた「指針（コンパス）」を<br>
+        3ヶ月・6ヶ月かけて、確かな現実へと変えていく。
+      </p>
+      <div class="hero-notice">
+        伴走コースは、スタートアップ・セッション（フロントセッション）を<br>
+        受けていただいた方が対象のバックエンドメニューです。<br>
+        一人では続けにくいことも、一緒なら歩ける。
+      </div>
+    </div>
+    <div class="hero-illust">
+      <img src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=400&q=80"
+           alt="地図とコンパス"
+           style="width:200px;height:200px;object-fit:cover;border-radius:50%;border:1px solid #e0d5c5;"/>
+    </div>
+  </section>
+
+  <!-- コースメニュー -->
+  <section class="section">
+    <p class="section-label">Course Menu</p>
+
+    <!-- 3ヶ月コース -->
+    <div class="course-card">
+      <div class="course-img" style="height:200px;overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=760&q=80"
+             alt="森の小道"
+             style="width:100%;height:100%;object-fit:cover;object-position:center;"/>
+      </div>
+      <div class="course-body">
+        <p class="course-name">3ヶ月伴走コース</p>
+        <p class="course-name-en">Navigator — 3 Month Course</p>
+        <div class="price-block">
+          <span class="price-main">¥60,000</span>
+          <span class="price-regular">¥90,000</span>
+          <span class="price-tag">先着5名 モニター価格</span>
+        </div>
+        <hr class="divider">
+        <div class="includes-grid">
+          <div class="include-item">月2回 Zoom セッション（計6回）</div>
+          <div class="include-item">Life Navigation Log（伴走ログ）</div>
+          <div class="include-item">緊急 15分 Zoom サポート</div>
+          <div class="include-item">セッション間のメッセージサポート</div>
+        </div>
+        <p class="course-note">3ヶ月後のゴールをコンパスに固定し、毎回のセッションで現在地を確認しながら進みます。「孤独にさせない」伴走スタイルで、行動と変化を一緒に記録していきます。</p>
+      </div>
+    </div>
+
+    <!-- 6ヶ月コース -->
+    <div class="course-card featured">
+      <span class="featured-badge">Recommended</span>
+      <div class="course-img" style="height:200px;overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=760&q=80"
+             alt="海と水平線"
+             style="width:100%;height:100%;object-fit:cover;object-position:center 60%;"/>
+      </div>
+      <div class="course-body">
+        <p class="course-name">6ヶ月伴走コース</p>
+        <p class="course-name-en">Deep Navigator — 6 Month Course</p>
+        <div class="price-block">
+          <span class="price-main">¥100,000</span>
+          <span class="price-regular">¥150,000</span>
+          <span class="price-tag">先着5名 モニター価格</span>
+        </div>
+        <hr class="divider">
+        <div class="includes-grid">
+          <div class="include-item">月2回 Zoom セッション（計12回）</div>
+          <div class="include-item">Life Navigation Log（伴走ログ）</div>
+          <div class="include-item">緊急 15分 Zoom サポート</div>
+          <div class="include-item">航海日誌（Voyage Journal）</div>
+          <div class="include-item">セッション間のメッセージサポート</div>
+          <div class="include-item">振り返りレポート（最終回）</div>
+        </div>
+        <p class="course-note">6ヶ月間じっくりと根を張るコース。3ヶ月目に中間レビューを行い、後半の航路を再設定します。「航海日誌」に自分の変化を書き記すことで、確かな自信が積み重なっていきます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ご利用の流れ -->
+  <section class="section">
+    <p class="section-label">Flow</p>
+    <ul class="flow-list">
+      <li class="flow-item">
+        <div class="flow-left">
+          <div class="flow-num">01</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <div class="flow-illust-wrap">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=120&q=80" alt="スタートアップセッション"/>
+          </div>
+          <div class="flow-text">
+            <p class="flow-title">スタートアップ・セッション</p>
+            <p class="flow-desc">60分のフロントセッションで、現在地とコンパス（指針）を確認します。</p>
+          </div>
+        </div>
+      </li>
+      <li class="flow-item">
+        <div class="flow-left">
+          <div class="flow-num">02</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <div class="flow-illust-wrap">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=120&q=80" alt="コースのご提案"/>
+          </div>
+          <div class="flow-text">
+            <p class="flow-title">コースのご提案・お申し込み</p>
+            <p class="flow-desc">セッション後に、あなたに合った伴走コースをご提案します。ご納得いただいてからお申し込みください。</p>
+          </div>
+        </div>
+      </li>
+      <li class="flow-item">
+        <div class="flow-left">
+          <div class="flow-num">03</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <div class="flow-illust-wrap">
+            <img src="https://images.unsplash.com/photo-1499810631641-541e76d678a2?w=120&q=80" alt="伴走スタート"/>
+          </div>
+          <div class="flow-text">
+            <p class="flow-title">伴走スタート</p>
+            <p class="flow-desc">Life Navigation Log（伴走ログ）を共有し、月2回のZoomセッションで歩き始めます。</p>
+          </div>
+        </div>
+      </li>
+      <li class="flow-item">
+        <div class="flow-left">
+          <div class="flow-num">04</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <div class="flow-illust-wrap">
+            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=120&q=80" alt="変化の積み重ねと振り返り"/>
+          </div>
+          <div class="flow-text">
+            <p class="flow-title">変化の積み重ねと振り返り</p>
+            <p class="flow-desc">セッションのたびに現在地を確認し、ゴールへの道筋を調整しながら進みます。</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Workオプション -->
+  <section class="section">
+    <p class="section-label">Work Option</p>
+    <div class="work-grid">
+      <div class="work-item">
+        <div class="work-img">
+          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80" alt="チラシ作成"/>
+        </div>
+        <div class="work-body">
+          <p class="work-title">チラシ作成</p>
+          <p class="work-price">¥30,000〜</p>
+          <p class="work-desc">サービスや活動を伝える印刷・配布用チラシ。<br>A4・片面デザイン1点／文章の清書込み／修正2回まで（PDF納品）</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" alt="導線構築"/>
+        </div>
+        <div class="work-body">
+          <p class="work-title">導線構築</p>
+          <p class="work-price">¥40,000〜</p>
+          <p class="work-desc">今あるSNS・予約ツールの導線を整理して設計・設定。<br>使い方レクチャー込み／修正2回まで</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-img">
+          <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&q=80" alt="HP作成"/>
+        </div>
+        <div class="work-body">
+          <p class="work-title">HP作成</p>
+          <p class="work-price">¥80,000〜</p>
+          <p class="work-desc">コーチング・起業家向けのホームページ制作。<br>1〜3ページ／スマホ対応／お問い合わせ導線つき／修正2回まで</p>
+        </div>
+      </div>
+    </div>
+    <p class="work-note">※ Workオプションは伴走コースの追加メニューです。ビジネス構築の「制作物」を一緒に形にしていきます。<br>表示は制作費のみ。印刷代・写真などの素材費・独自ドメイン取得代などは別途申し受けます。</p>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <p class="cta-text">
+      まずはフロントセッションからお気軽にどうぞ。<br>
+      「まだ準備ができていない」と感じているあなたこそ、<br>
+      コンパスが必要なタイミングかもしれません。
+    </p>
+    <a href="https://lin.ee/7Kdhmr7" target="_blank" rel="noopener" class="cta-btn">お申し込み・お問い合わせ</a>
+    <p class="cta-note">Life Compass Session by おけい</p>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-logo">Life Compass Session</p>
+    <p class="footer-sub">ライフ・コンパス・セッション</p>
+  </footer>
+
+</div>
+</body>
+</html>

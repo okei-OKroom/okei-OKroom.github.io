@@ -7,8 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Shippori+Mincho+B1:wght@400;500;600&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #010c10;
-    --deep: #051c22;
+    --ink: #072530;
+    --deep: #0e3243;
     --navy: #072d38;
     --midnight: #0a3d4f;
     --gold: #c9a96e;
@@ -23,7 +23,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background: #051c22;  /* fallback */
+    background: #0e3243;  /* fallback */
     color: var(--cream);
     font-family: 'Noto Serif JP', 'Noto Sans JP', serif;
     font-weight: 300;
@@ -39,12 +39,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 4rem;
-    background: linear-gradient(to bottom, rgba(10,22,40,0.95), transparent);
+    background: linear-gradient(to bottom, rgba(16,40,64,0.82), transparent);
     transition: background 0.4s, padding 0.4s, backdrop-filter 0.4s;
   }
 
   nav.scrolled {
-    background: rgba(5, 20, 40, 0.92);
+    background: rgba(14, 38, 60, 0.82);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 1rem 4rem;
@@ -89,7 +89,7 @@
     padding: 6rem 2rem 5rem;
     z-index: 1;
     overflow: hidden;
-    background: url('bg-night-stars.png') center 30%/cover no-repeat;
+    background: url('bg-night-stars.jpg') center 30%/cover no-repeat;
   }
 
   .hero::before {
@@ -97,9 +97,9 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-      rgba(5, 15, 35, 0.5) 0%,
-      rgba(8, 20, 55, 0.55) 50%,
-      rgba(5, 20, 45, 0.65) 100%);
+      rgba(14, 36, 66, 0.32) 0%,
+      rgba(18, 44, 82, 0.38) 50%,
+      rgba(16, 40, 72, 0.48) 100%);
     z-index: 0;
   }
 
@@ -210,6 +210,7 @@
     color: var(--star);
     letter-spacing: 0.12em;
     margin-bottom: 0.6rem;
+    text-shadow: 0 2px 22px rgba(4, 18, 36, 0.6);
     animation: fadeUp 1s ease 0.4s both;
   }
 
@@ -373,7 +374,7 @@
   }
 
   .theme-item {
-    background: rgba(5, 35, 45, 0.62);
+    background: rgba(16, 48, 60, 0.5);
     border: 1px solid rgba(201,169,110,0.25);
     border-left: 3px solid var(--gold);
     padding: 1.2rem 1.5rem;
@@ -448,7 +449,7 @@
     padding: 2.5rem 2rem;
     position: relative;
     transition: border-color 0.3s, transform 0.3s;
-    background: rgba(5, 35, 45, 0.65);
+    background: rgba(16, 48, 60, 0.54);
   }
 
   .what-card:hover {
@@ -489,7 +490,7 @@
     gap: 1.25rem;
     padding: 1.5rem 2rem;
     border-left: 2px solid rgba(201,169,110,0.5);
-    background: rgba(5, 35, 45, 0.62);
+    background: rgba(16, 48, 60, 0.5);
     transition: border-color 0.3s;
   }
 
@@ -513,7 +514,7 @@
   .details-box {
     border: 1px solid rgba(224,185,110,0.35);
     padding: 3.5rem;
-    background: rgba(5, 35, 45, 0.65);
+    background: rgba(16, 48, 60, 0.54);
     margin-top: 3rem;
   }
 
@@ -595,7 +596,7 @@
     margin: 0 auto 4rem;
     padding: 2.5rem 3rem;
     border: 1px solid rgba(201,169,110,0.3);
-    background: rgba(5,20,35,0.6);
+    background: rgba(16, 46, 60, 0.5);
     text-align: left;
   }
 
@@ -631,7 +632,7 @@
   .cta-section {
     text-align: center;
     padding: 6rem 2rem;
-    background: url('bg-sunrise-ocean.png') center center/cover no-repeat;
+    background: url('bg-sunrise-ocean.jpg') center center/cover no-repeat;
     position: relative;
   }
 
@@ -640,8 +641,8 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-      rgba(5, 10, 30, 0.7) 0%,
-      rgba(80, 40, 5, 0.55) 100%);
+      rgba(18, 38, 62, 0.42) 0%,
+      rgba(140, 82, 28, 0.4) 100%);
     pointer-events: none;
   }
 
@@ -657,6 +658,7 @@
     font-weight: 400;
     color: var(--star);
     margin-bottom: 1rem;
+    text-shadow: 0 2px 20px rgba(4, 18, 36, 0.55);
   }
 
   .cta-section p {
@@ -719,7 +721,7 @@
     text-align: center;
     padding: 3rem 2rem;
     border-top: 1px solid rgba(201,169,110,0.2);
-    background: url('bg-sunrise-ocean.png') center bottom/cover no-repeat;
+    background: url('bg-sunrise-ocean.jpg') center bottom/cover no-repeat;
     overflow: hidden;
   }
 
@@ -727,7 +729,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(60, 30, 5, 0.72);
+    background: rgba(78, 48, 16, 0.52);
     pointer-events: none;
   }
 
@@ -779,6 +781,7 @@
     margin-bottom: 0.5rem;
     font-weight: 400;
     letter-spacing: 0.06em;
+    text-shadow: 0 2px 16px rgba(4, 18, 36, 0.5);
   }
 
   /* ── Animations ── */
@@ -818,7 +821,7 @@
 
   /* ── 背景画像：上半分＝夜の海、下半分＝夜明けの海 ── */
   #about, #what, #for-whom {
-    background: url('bg-night-stars.png') center center/cover no-repeat;
+    background: url('bg-night-stars.jpg') center center/cover no-repeat;
     position: relative;
   }
 
@@ -827,8 +830,8 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-      rgba(5, 15, 40, 0.72) 0%,
-      rgba(8, 22, 60, 0.78) 100%);
+      rgba(16, 40, 68, 0.5) 0%,
+      rgba(20, 48, 84, 0.58) 100%);
     pointer-events: none;
   }
 
@@ -842,7 +845,7 @@
     z-index: 1;
   }
   #details {
-    background: url('bg-sunrise-ocean.png') center center/cover no-repeat;
+    background: url('bg-sunrise-ocean.jpg') center center/cover no-repeat;
     position: relative;
   }
 
@@ -851,9 +854,9 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-      rgba(5, 10, 30, 0.82) 0%,
-      rgba(30, 20, 10, 0.72) 60%,
-      rgba(60, 30, 5, 0.65) 100%);
+      rgba(18, 38, 62, 0.5) 0%,
+      rgba(70, 52, 28, 0.42) 60%,
+      rgba(140, 88, 34, 0.36) 100%);
     pointer-events: none;
   }
 
@@ -937,7 +940,7 @@
     padding: 2.5rem 2rem;
     position: relative;
     transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
-    background: rgba(5, 28, 40, 0.7);
+    background: rgba(16, 48, 60, 0.5);
     overflow: hidden;
   }
 
@@ -979,7 +982,7 @@
 
   /* ── theme-item improved hover ── */
   .theme-item {
-    background: rgba(5, 28, 42, 0.7);
+    background: rgba(16, 48, 60, 0.5);
     border: 1px solid rgba(201,169,110,0.2);
     border-left: 3px solid var(--gold);
     padding: 1.2rem 1.5rem;
@@ -987,7 +990,7 @@
   }
 
   .theme-item:hover {
-    background: rgba(5, 35, 52, 0.85);
+    background: rgba(18, 54, 66, 0.62);
     border-color: rgba(201,169,110,0.45);
     border-left-color: var(--gold-light);
     transform: translateX(4px);
@@ -1012,7 +1015,7 @@
   .details-box {
     border: 1px solid rgba(224,185,110,0.3);
     padding: 3.5rem;
-    background: rgba(5, 20, 35, 0.72);
+    background: rgba(16, 46, 60, 0.55);
     margin-top: 3rem;
     box-shadow: inset 0 1px 0 rgba(201,169,110,0.1), 0 0 60px rgba(0,0,0,0.3);
     position: relative;
@@ -1033,29 +1036,29 @@
     gap: 1.25rem;
     padding: 1.5rem 2rem;
     border-left: 2px solid rgba(201,169,110,0.4);
-    background: rgba(5, 28, 42, 0.65);
+    background: rgba(16, 48, 60, 0.5);
     transition: all 0.35s ease;
   }
 
   .for-item:hover {
     border-left-color: var(--gold);
-    background: rgba(5, 35, 52, 0.8);
+    background: rgba(18, 54, 66, 0.62);
     transform: translateX(4px);
   }
 
   @media (max-width: 768px) {
     /* 背景：スマホ用に明示的に指定 */
     #about, #what, #for-whom {
-      background: url('bg-night-stars.png') center center/cover no-repeat;
+      background: url('bg-night-stars.jpg') center center/cover no-repeat;
     }
     #details {
-      background: url('bg-sunrise-ocean.png') center center/cover no-repeat;
+      background: url('bg-sunrise-ocean.jpg') center center/cover no-repeat;
     }
     .cta-section {
-      background: url('bg-sunrise-ocean.png') center center/cover no-repeat;
+      background: url('bg-sunrise-ocean.jpg') center center/cover no-repeat;
     }
     footer {
-      background: url('bg-sunrise-ocean.png') center bottom/cover no-repeat;
+      background: url('bg-sunrise-ocean.jpg') center bottom/cover no-repeat;
     }
     /* Nav */
     nav { padding: 1rem 1.2rem; }
@@ -1160,8 +1163,8 @@
       <div class="hero-top">
         <h1 class="hero-title">Life Compass Session</h1>
         <p class="hero-subtitle">
-          ～あなただけの「変わらない光」を見つけ、<br>
-          　　　あなたの中に眠る「答え」を呼び覚ます～
+          〜 自分らしい方向を見つけて、<br>
+          心の中にある「答え」に、そっと気づく時間 〜
         </p>
       </div>
       <!-- 2. 画像 -->
@@ -1181,17 +1184,17 @@
     <h2 class="section-title">「私はどこに向かっているんだろう？」<br>そう感じているあなたへ</h2>
     <br>
     <div class="intro-text">
-      <p>もし今、あなたが人生の霧の中にいるのなら——<br>
-      それは、外側の正解を探すのをやめて<br>
-      <span class="intro-highlight">あなただけの「北極星」を見つけるタイミング</span>かもしれません。🧭✨</p>
+      <p>いま「どっちに進めばいいんだろう」とモヤモヤしているなら、<br>
+      それは、まわりの正解を探すのをちょっと休んで、<br>
+      <span class="intro-highlight">自分だけの「北極星」を見つけるタイミング</span>かもしれません。🧭✨</p>
 
-      <p>夜の海をゆく航海士が、決して動かない「北極星」を頼りに進路を決めるように<br>
-      私たちの人生にも、揺るがない「魂の目的地」が必ずあります。</p>
+      <p>夜の海を進む船が、動かない北極星を目印にするように、<br>
+      あなたの中にも、ぶれない「進みたい方向」がちゃんとあります。</p>
 
-      <p>周りの意見や世間の常識という波に流されるのではなく、<br>
-      自分の中に眠る羅針盤を動かし、自ら舵を取る。</p>
+      <p>まわりの声や「こうすべき」に流されず、<br>
+      自分の心の羅針盤で、少しずつ舵をとっていく。</p>
 
-      <p>そんな<span class="intro-highlight">「誇り高い航海」</span>を、ここから一緒に始めませんか？</p>
+      <p>そんな時間を、<span class="intro-highlight">ここから一緒に</span>始めてみませんか？</p>
     </div>
   </div>
 </section>
@@ -1215,7 +1218,7 @@
       <div class="what-card">
         <div class="what-card-icon">⭐️</div>
         <h3 class="what-card-title">あなたの「北極星」</h3>
-        <p class="what-card-text">魂が本当に望んでいる「目的地」を明確にします。</p>
+        <p class="what-card-text">あなたが本当に「こうありたい」と思う方向を、いっしょに見つけます。</p>
       </div>
       <div class="what-card">
         <div class="what-card-icon">🧭</div>
@@ -1307,7 +1310,7 @@
     <p class="section-label">Details</p>
     <h2 class="section-title">〜 セッション詳細と料金 〜</h2>
     <div class="details-box">
-      <p class="details-heading">Zoomを使用した1時間の対話で、今のあなたの現在地を知り<br>魂の目的地・望む未来のビジョンを具体化します。</p>
+      <p class="details-heading">Zoomでの1時間の対話で、いまの自分の立ち位置を整理し、<br>これから進みたい方向や、なりたい未来を具体的にしていきます。</p>
       <div class="details-row">
         <span class="details-label">形式</span>
         <span class="details-value">オンライン（Zoomビデオ通話）</span>
@@ -1342,11 +1345,11 @@
   <div class="profile-box">
     <p class="profile-role">Life Compass Guide</p>
     <h3 class="profile-name">おけい</h3>
-    <p class="profile-text">2012年から心理学を学び、豊かな人生を生きるためのプログラムを提供、講座を通じて心の仕組みを知り気持ちを共有するコミュニティの輪を広げている。<br>2026年よりオリジナルセッションをスタート。人の中に眠る才能や魅力を引き出し、自らの人生の舵をとり魂の目的地へと誘う新たな活動を開始。</p>
+    <p class="profile-text">2012年から心理学を学び、豊かに生きるためのプログラムや講座を通して、心のしくみを知り、気持ちを分かち合える仲間の輪を広げてきました。<br>2026年からは、その人の中にある才能や魅力を引き出し、自分の人生の舵を自分でとっていくためのオリジナルセッションをスタートしています。</p>
   </div>
 
-  <h2>あなたの魂の目的地へ</h2>
-  <p>新しい物語が動き出す瞬間にご一緒できるのを楽しみにしています。</p>
+  <h2>あなたの「進みたい方向」へ</h2>
+  <p>新しい一歩を踏み出す瞬間に、ご一緒できるのを楽しみにしています。</p>
   <div class="cta-buttons">
     <a href="https://www.jicoo.com/t/LdCkaefWtoS-/e/life-compass-session" class="btn-primary" target="_blank">
       お申し込みはこちら
@@ -1359,6 +1362,16 @@
   <p style="font-size:0.8rem; color: var(--mist);">
     メールでのお問い合わせ：<a href="mailto:okei338@gmail.com" style="color: var(--gold-light);">okei338@gmail.com</a>
   </p>
+
+  <div style="max-width:600px; margin:3.5rem auto 0; padding-top:2.5rem; border-top:1px solid rgba(201,169,110,0.28);">
+    <p style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.4em; color:var(--gold); text-transform:uppercase; margin-bottom:0.9rem;">Next Step</p>
+    <p style="color:#fff; font-size:0.95rem; line-height:2; margin-bottom:1.6rem;">
+      セッションで見つけた「進みたい方向」を、<br>
+      3ヶ月・6ヶ月かけて、確かな現実に変えていきたい方へ。<br>
+      その後の歩みをご一緒する「伴走コース」もご用意しています。
+    </p>
+    <a href="accompaniment.html" class="btn-secondary">伴走コースを見る →</a>
+  </div>
 </section>
 
 <!-- Footer -->
