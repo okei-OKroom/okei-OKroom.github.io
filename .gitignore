@@ -1,0 +1,7 @@
+# Obsidian の個人的な状態ファイル（同期しない）
+.obsidian/workspace*.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+.trash/
+.DS_Store
+__pycache__/

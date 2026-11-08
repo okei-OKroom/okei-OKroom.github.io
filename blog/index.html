@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OK Room ブログ</title>
+<meta name="description" content="おけいの日々の気づき、心理学のこと、YUKINE の石のこと。こころと人生をととのえるヒントを綴っています。">
+<meta property="og:title" content="OK Room ブログ">
+<meta property="og:description" content="おけいの日々の気づき、心理学のこと、YUKINE の石のこと。こころと人生をととのえるヒントを綴っています。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ok-room.net/blog/">
+<link rel="canonical" href="https://ok-room.net/blog/">
+<link rel="alternate" type="application/rss+xml" title="OK Room ブログ" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <a href="../index.html" class="brand round"><svg class="dot" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#b7a4e6"/><path d="M20 30c-6-4-10-7.5-10-12a5.4 5.4 0 0 1 10-2 5.4 5.4 0 0 1 10 2c0 4.5-4 8-10 12z" fill="#fff"/></svg>OK Room<small>こころをととのえる時間</small></a>
+    <nav class="nav-links">
+      <a href="../index.html#psychology">心理学</a>
+      <a href="../index.html#yukine">YUKINE</a>
+      <a href="../life-design-essence.html">ラジオ番組</a>
+      <a href="index.html">ブログ</a>
+      <a class="btn-line-sm" href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.66 2 10.16c0 4.03 3.55 7.4 8.35 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.9.56 1.1-.46 5.94-3.5 8.1-5.99C21.4 13.4 22 11.86 22 10.16 22 5.66 17.52 2 12 2z"/></svg>LINEで相談</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">BLOG ／ ブログ</span>
+    <h1 class="round">OK Room ブログ</h1>
+    <p>おけいの日々の気づき、心理学のこと、YUKINE の石のこと。こころと人生をととのえるヒントを綴っています。</p>
+    <div class="tagbar"><button class="chip on" type="button" data-tag="">すべて</button><button class="chip" type="button" data-tag="おしらせ">#おしらせ</button></div>
+  </div>
+</section>
+<main class="narrow posts">
+<a class="card" href="%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AF%E3%81%98%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F.html" data-tags="[&quot;おしらせ&quot;]"><time datetime="2026-11-08">2026.11.08</time><h2>ブログはじめました 🌷</h2><p>OK Room にブログができました。日々の気づきや、心理学・YUKINE のことを綴っていきます。</p><div class=tags><span>#おしらせ</span></div></a>
+</main>
+<script>
+document.querySelectorAll('.tagbar .chip').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var tag = btn.dataset.tag;
+    document.querySelectorAll('.tagbar .chip').forEach(function(b){ b.classList.toggle('on', b === btn); });
+    document.querySelectorAll('.posts .card').forEach(function(card){
+      var tags = JSON.parse(card.dataset.tags || '[]');
+      card.style.display = (!tag || tags.indexOf(tag) !== -1) ? '' : 'none';
+    });
+  });
+});
+</script>
+
+<footer>
+  <div class="wrap">
+    <div><a href="../index.html">ホーム</a> ｜ <a href="index.html">ブログ</a> ｜ <a href="../course.html">VCA心理学講座</a> ｜ <a href="../life-compass.html">Life Compass Session</a> ｜ <a href="../life-design-essence.html">ラジオ番組</a> ｜ <a href="https://lin.ee/xT0FdTS" target="_blank" rel="noopener">公式LINE</a></div>
+    <p class="note">© OK Room</p>
+  </div>
+</footer>
+</body>
+</html>
