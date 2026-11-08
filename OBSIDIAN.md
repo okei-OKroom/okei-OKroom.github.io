@@ -6,11 +6,13 @@ Obsidian で書いたノートが、そのままサイトの **ブログ（https
 
 ```
 Obsidian でノートを書く（notes/ フォルダ）
-   ↓ Obsidian Git プラグインで GitHub に送る（push）
-GitHub Actions が自動で HTML に変換（scripts/build_blog.py）
-   ↓
-blog/ に記事ページができて、サイトに公開される
+   ↓ 公開したいときに、手元で変換スクリプトを実行（scripts/build_blog.py）
+blog/ に記事ページができる
+   ↓ GitHub に送る（push）
+サイトに公開される
 ```
+
+ノートを GitHub に送っただけでは公開されません。変換スクリプトを実行したときだけ、ブログが更新されます。
 
 ## はじめの設定（1回だけ）
 
@@ -19,8 +21,11 @@ blog/ に記事ページができて、サイトに公開される
    - 新しいノートは自動で `notes/`、貼り付けた画像は `notes/attachments/` に入るよう設定済みです。
 3. 設定 → コアプラグイン → **テンプレート** をオンにする（テンプレートの場所は `notes/_templates` に設定済み）。
 4. 設定 → コミュニティプラグイン → **Obsidian Git** をインストールして有効にする。
-   - 「Auto commit-and-sync interval」を 10 分などにしておくと、自動で GitHub に送られます。
-   - スマホで書く場合も、Obsidian Git（モバイル対応）で同じように使えます。
+   - ノートのバックアップ・同期用です（送るだけではブログは更新されません）。
+5. 変換スクリプト用のライブラリを入れる（Python が必要です）:
+   ```bash
+   pip install -r scripts/requirements.txt
+   ```
 
 ## 記事の書き方
 
@@ -53,12 +58,13 @@ blog/ に記事ページができて、サイトに公開される
 ⚠️ リポジトリは公開されているため、下書きも GitHub 上では誰でも見られます。
 人に見られたくないメモは、このフォルダの外（別の保管庫）に書いてください。
 
-## 手元で確認したいとき
+## ブログに公開する
 
 ```bash
-pip install -r scripts/requirements.txt
 python scripts/build_blog.py
-# blog/index.html をブラウザで開く
+# blog/index.html をブラウザで開いて確認
 ```
 
-`blog/` は毎回自動で作り直されるので、直接編集しないでください。
+確認できたら、`blog/` フォルダの変更も含めて GitHub に送る（Obsidian Git なら「Commit-and-sync」）と、サイトに反映されます。
+
+`blog/` はスクリプトを実行するたびに作り直されるので、直接編集しないでください。
