@@ -1,6 +1,0 @@
-# GitHub Pages（Jekyll）が Obsidian のノートやスクリプトをそのまま公開しないようにする
-exclude:
-  - notes
-  - scripts
-  - OBSIDIAN.md
-  - README.md
